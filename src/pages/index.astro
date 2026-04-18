@@ -1,0 +1,101 @@
+---
+// Supports weights 100-800
+import '@fontsource-variable/jetbrains-mono/wght.css';
+
+import '@/styles/global.css';
+
+import { Image } from 'astro:assets';
+
+import profileImg from '@/assets/profile-picture.jpg';
+
+const githubLink = 'https://github.com/jrdx0';
+const workLink = 'https://walcu.com';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>jrdx0</title>
+  </head>
+  <body>
+    <header>
+      <div class="profile">
+        <Image src={profileImg} alt="Profile picture" width={32} height={32} />
+        <h1>Jared&lt;<a href={githubLink} target="_blank">@jrdx0</a>&gt;</h1>
+      </div>
+
+      <div class="status">
+        <div class="bullet"></div>
+        <span>
+          Status: Working at
+          <span class="working-at">
+            <a href={workLink} target="_blank">Walcu</a>
+          </span>
+        </span>
+      </div>
+    </header>
+    <main></main>
+    <footer></footer>
+  </body>
+</html>
+
+<style>
+  header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profile {
+    align-items: center;
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .profile img {
+    border-radius: 100%;
+  }
+
+  .profile h1 {
+    color: #f2f2f2;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .profile a {
+    color: #f2f2f2;
+  }
+
+  .status {
+    align-items: center;
+    color: #53a4b2;
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: 300;
+    gap: 0.5rem;
+  }
+
+  .bullet {
+    background-color: #53a4b2;
+    border-radius: 100%;
+    height: 0.3rem;
+    width: 0.3rem;
+  }
+
+  .working-at {
+    font-weight: 800;
+  }
+
+  .working-at a {
+    color: #53a4b2;
+  }
+
+  @media (max-width: 450px) {
+    header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>

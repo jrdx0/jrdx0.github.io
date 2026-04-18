@@ -1,0 +1,19 @@
+html {
+  background-color: #141414;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'JetBrains Mono Variable', monospace;
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
