@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+
+import profileImg from '@/assets/profile-picture.jpg';
+
+const githubLink = 'https://github.com/jrdx0';
+const workLink = 'https://walcu.com';
+---
+
+<header>
+  <div class="profile">
+    <Image src={profileImg} alt="Profile picture" width={30} height={30} />
+    <span>Jared&lt;<a href={githubLink} target="_blank">@jrdx0</a>&gt;</span>
+  </div>
+  <div class="status">
+    <div class="dot"></div>
+    <span>Status: Working at <a href={workLink} target="_blank">Walcu</a></span>
+  </div>
+</header>
+
+<style>
+  header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.75rem;
+  }
+
+  .profile {
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 500;
+    gap: 0.625rem;
+  }
+
+  .profile img {
+    border-radius: 50%;
+  }
+
+  .status {
+    align-items: center;
+    color: var(--fg-dim);
+    display: flex;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    background: var(--accent);
+    border-radius: 50%;
+    height: 0.375rem;
+    width: 0.375rem;
+  }
+
+  .status a {
+    font-weight: 600;
+  }
+
+  @media (max-width: 450px) {
+    header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>

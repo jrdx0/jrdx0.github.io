@@ -1,19 +1,39 @@
-html {
-  background-color: #141414;
+:root {
+  --bg: #1d1f1d;
+  --bg-alt: #3c3e39;
+  --border: rgba(236, 223, 200, 0.09);
+  --border-strong: rgba(236, 223, 200, 0.18);
+  --fg: #ecdfc8;
+  --fg-dim: rgba(236, 223, 200, 0.62);
+  --fg-muted: rgba(236, 223, 200, 0.38);
+  --accent: #6f7d68;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
 
+html {
+  background-color: var(--bg);
+}
+
 body {
+  color: var(--fg);
   font-family: 'JetBrains Mono Variable', monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
   margin: 0 auto;
-  max-width: 900px;
-  padding-top: 1rem;
+  max-width: 60rem;
+  padding: 2.5rem 3.5rem;
+}
+
+a {
+  color: var(--accent);
 }
 
 @media (max-width: 900px) {
   body {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
   }
 }
-

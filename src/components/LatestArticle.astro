@@ -1,0 +1,45 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+}
+
+const { id, title, description } = Astro.props;
+---
+
+<section>
+  <h4>Último artículo</h4>
+  <div>
+    <h1><a href={`/posts/${id}`}>{title}</a></h1>
+    <p>{description}</p>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 2.75rem 0 2.25rem;
+  }
+
+  h4 {
+    color: var(--fg-muted);
+    font-size: 0.6875rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  section div h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015rem;
+    line-height: 1.35;
+  }
+
+  p {
+    color: var(--fg-dim);
+    line-height: 1.7;
+    margin-top: 0.875rem;
+    max-width: 48rem;
+  }
+</style>
